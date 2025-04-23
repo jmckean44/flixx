@@ -1,4 +1,4 @@
-const apiKey = import.meta.env.VITE_API_KEY;
+const apiKey = import.meta.env.VITE_API_KEY || '1234';
 console.log(apiKey);
 
 const global = {

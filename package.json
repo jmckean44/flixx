@@ -1,4 +1,5 @@
 {
+	"$schema": "https://json.schemastore.org/package.json",
 	"name": "flixx",
 	"version": "1.0.0",
 	"description": "",
@@ -7,7 +8,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "vite build",
 		"deploy": "npm run build && gh-pages -d dist",
-		"dev": "vite"
+		"dev": "vite dev"
 	},
 	"keywords": [],
 	"author": "",

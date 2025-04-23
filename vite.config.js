@@ -2,5 +2,5 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-	base: '/Flixx/', // Replace <repository-name> with your GitHub repo name
+	base: '/flixx/', // Replace <repository-name> with your GitHub repo name
 });

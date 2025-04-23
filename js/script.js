@@ -1,5 +1,5 @@
 const apiKey = import.meta.env.VITE_API_KEY;
-//console.log(apiKey);
+console.log(apiKey);
 
 const global = {
 	currentPage: window.location.pathname,

@@ -17,7 +17,7 @@ importers:
         version: 6.3.0
       vite:
         specifier: ^6.3.2
-        version: 6.3.2
+        version: 6.3.3
       vite-plugin-gh-pages:
         specifier: ^1.0.1
         version: 1.0.1
@@ -516,8 +516,8 @@ packages:
   vite-plugin-gh-pages@1.0.1:
     resolution: {integrity: sha512-BL83oPZINfCr/XcKXDAPtZR/zRKH4JyAdg5fHadOz2DxLnNYhHDKfWNdelHy+b4EYd/IGw7D85+p7lUuZJIVCg==}
 
-  vite@6.3.2:
-    resolution: {integrity: sha512-ZSvGOXKGceizRQIZSz7TGJ0pS3QLlVY/9hwxVh17W3re67je1RKYzFHivZ/t0tubU78Vkyb9WnHPENSBCzbckg==}
+  vite@6.3.3:
+    resolution: {integrity: sha512-5nXH+QsELbFKhsEfWLkHrvgRpTdGJzqOZ+utSdmPTvwHmvU6ITTm3xx+mRusihkcI8GeC7lCDyn3kDtiki9scw==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
     peerDependencies:
@@ -956,7 +956,7 @@ snapshots:
     dependencies:
       gh-pages: 6.3.0
 
-  vite@6.3.2:
+  vite@6.3.3:
     dependencies:
       esbuild: 0.25.3
       fdir: 6.4.4(picomatch@4.0.2)

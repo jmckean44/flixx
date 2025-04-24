@@ -1,3 +1,4 @@
+# /Users/design3/Jeff/www/PROJECTS/Flixx/.github/workflows/static.yml
 name: Deploy to GitHub Pages
 
 on:
@@ -8,27 +9,44 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # Add permissions required by peaceiris/actions-gh-pages to push to the gh-pages branch
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # Updated action version
+
+      # --- If using pnpm (based on previous error) ---
+      # - name: Setup pnpm
+      #   uses: pnpm/action-setup@v3
+      #   with:
+      #     version: 8 # Specify your pnpm version
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4 # Updated action version
         with:
-          node-version: 16
+          node-version: 20 # Use a recent LTS Node.js version
+          # cache: 'pnpm' # Enable caching if using pnpm
+          cache: 'npm' # Enable caching if using npm
 
       - name: Install dependencies
-        run: npm install
+        # run: pnpm install --frozen-lockfile # If using pnpm
+        run: npm ci # Use npm ci for faster, reliable installs in CI
 
       - name: Build project
-        run: |
-          npm run build
-          mkdir -p dist
+        run: npm run build
+        env:
+          # IMPORTANT: Make sure VITE_API_KEY is set as a GitHub Secret
+          # Go to your repo > Settings > Secrets and variables > Actions > New repository secret
+          VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
+
+      # No need for 'mkdir -p dist', the build command should create it
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4 # Updated action version
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          cname: false
           publish_dir: ./dist
-          publish_branch: gh-pages
+          # publish_branch: gh-pages # Default is gh-pages
+          # cname: false # Default is false

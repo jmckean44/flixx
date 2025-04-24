@@ -4,6 +4,7 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.html",
+	"type": "module",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "vite build",
@@ -19,7 +20,6 @@
 	"devDependencies": {
 		"gh-pages": "^6.3.0",
 		"vite": "^6.3.2",
-		"type": "module",
 		"vite-plugin-gh-pages": "^1.0.1"
 	}
 }

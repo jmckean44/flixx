@@ -1,15 +1,9 @@
-# /.github/workflows/static.yml
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
       - main
-
-# --- Add concurrency control ---
-concurrency:
-  group: 'pages' # A unique name for the concurrency group
-  cancel-in-progress: true # Cancel older runs in this group
 
 jobs:
   deploy:
@@ -21,26 +15,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # --- Add this step to set up pnpm ---
       - name: Setup pnpm
         uses: pnpm/action-setup@v3
         with:
-          version: 8 # Or your desired pnpm version
+          version: 8
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # --- Change cache to 'pnpm' ---
           cache: 'pnpm'
 
       - name: Install dependencies
-        # --- Use pnpm install ---
-        # --frozen-lockfile is recommended for CI to ensure exact versions from the lockfile are used
         run: pnpm install --no-frozen-lockfile
 
       - name: Build project
-        # --- Use pnpm to run the build script ---
         run: pnpm run build
         env:
           VITE_API_KEY: ${{ secrets.VITE_API_KEY }}

@@ -9,7 +9,8 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "vite build",
 		"deploy": "npm run build && gh-pages -d dist",
-		"dev": "vite dev"
+		"dev": "vite dev",
+		"preview": "vite preview"
 	},
 	"keywords": [],
 	"author": "",

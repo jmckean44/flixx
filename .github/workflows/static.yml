@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         # --- Use pnpm install ---
         # --frozen-lockfile is recommended for CI to ensure exact versions from the lockfile are used
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Build project
         # --- Use pnpm to run the build script ---
@@ -44,4 +44,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: dist

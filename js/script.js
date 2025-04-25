@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 const apiKey = typeof import.meta.env !== 'undefined' && import.meta.env.VITE_API_KEY ? import.meta.env.VITE_API_KEY : 'default_api_key';
-=======
-const apiKey = import.meta.env.TMDB_API_KEY || 'default_api_key';
->>>>>>> 9b208ae (href paths)
+
+//const apiKey = import.meta.env.TMDB_API_KEY || 'default_api_key';
 
 //console.log(apiKey);
 

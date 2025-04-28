@@ -36,7 +36,11 @@ jobs:
           node-version: lts/*
           cache: 'pnpm'
       - name: Install pnpm
-        run: npm install -g pnpm
+        run: |
+          npm install -g pnpm
+          echo "Adding pnpm to PATH"
+          export PATH="$(npm bin -g):$PATH"
+          pnpm --version
       - name: Install dependencies
         run: pnpm ci
       - name: Build

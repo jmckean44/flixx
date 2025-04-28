@@ -5,11 +5,16 @@ on:
     branches:
       - main
 
+# Add this concurrency block
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write # Permissions remain the same
 
     steps:
       - name: Checkout code
@@ -23,14 +28,17 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20'
           cache: 'pnpm'
+          cache-dependency-path: pnpm-lock.yaml
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        # Consider removing --no-frozen-lockfile unless strictly necessary
+        # It's generally safer to install based on the lockfile in CI
+        run: pnpm install # --no-frozen-lockfile
 
       - name: Build project
-        run: pnpm run build
+        run: pnpm run build # Use pnpm consistently if you set it up
         env:
           VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
 

@@ -444,7 +444,10 @@ function highlightActiveLink() {
 	const links = document.querySelectorAll('.nav-link');
 
 	links.forEach((link) => {
-		if (link.getAttribute('href') === global.currentPage) {
+		linkPath = link.getAttribute('href').replace('./', '').replace('/', '');
+		currentPath = global.currentPage.replace('./', '').replace('/', '');
+
+		if (linkPath === currentPath) {
 			link.classList.add('active');
 		} else {
 			link.classList.remove('active');

@@ -1,9 +1,5 @@
 const apiKey = import.meta.env.VITE_API_KEY;
 
-//const apiKey = import.meta.env.TMDB_API_KEY || 'default_api_key';
-
-console.log(apiKey);
-
 const global = {
 	currentPage: window.location.pathname,
 	search: {
@@ -14,7 +10,7 @@ const global = {
 		totalResults: 0,
 	},
 	api: {
-		apiKey: '18ee293fc284d43c4751d642546d411f',
+		apiKey: apiKey,
 		apiURL: 'https://api.themoviedb.org/3/',
 	},
 };

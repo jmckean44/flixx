@@ -1,4 +1,4 @@
-const apiKey = import.meta.env.VITE_API_KEY;
+const apiKey = import.meta.env.TMDB_API_KEY;
 
 //const apiKey = import.meta.env.TMDB_API_KEY || 'default_api_key';
 
@@ -444,8 +444,8 @@ function highlightActiveLink() {
 	const links = document.querySelectorAll('.nav-link');
 
 	links.forEach((link) => {
-		linkPath = link.getAttribute('href').replace('./', '').replace('/', '');
-		currentPath = global.currentPage.replace('./', '').replace('/', '');
+		const linkPath = link.getAttribute('href').replace('./', '').replace('/', '');
+		const currentPath = global.currentPage.replace('./', '').replace('/', '');
 
 		if (linkPath === currentPath) {
 			link.classList.add('active');

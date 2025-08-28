@@ -1,7 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import fetch from 'node-fetch';
 
 dotenv.config();
 
@@ -10,6 +9,11 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors());
+
+// Root route
+app.get('/', (req, res) => {
+	res.send('Welcome to the Flixx API!');
+});
 
 // Proxy route to TMDB API
 app.get('/api/:endpoint', async (req, res) => {

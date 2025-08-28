@@ -230,7 +230,8 @@ section h2 {
 }
 
 .details-top img {
-	width: 400px;
+	max-width: 400px;
+	width: 100%;
 	height: 100%;
 	margin-right: 60px;
 	object-fit: cover;

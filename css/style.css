@@ -229,6 +229,10 @@ section h2 {
 	margin: 50px 0 30px;
 }
 
+.details-top > div:last-child {
+	padding-left: 2rem;
+}
+
 .details-top img {
 	max-width: 400px;
 	width: 100%;
@@ -250,6 +254,9 @@ section h2 {
 	.details-top img {
 		margin-right: 0;
 	}
+	.details-top > div:last-child {
+		padding-left: 0;
+	}
 }
 
 .details-top p {
@@ -258,9 +265,6 @@ section h2 {
 
 .details-top .btn {
 	margin-top: 20px;
-}
-
-.details-bottom {
 }
 
 .details-bottom li {

@@ -1,6 +1,6 @@
-const apiKey = import.meta.env.VITE_API_KEY;
+// const apiKey = import.meta.env.VITE_API_KEY;
 
-//const apiKey = import.meta.env.TMDB_API_KEY || 'default_api_key';
+const apiKey = import.meta.env.TMDB_API_KEY || 'default_api_key';
 
 console.log(apiKey);
 
